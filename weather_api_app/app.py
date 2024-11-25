@@ -17,10 +17,12 @@ def home():
     weather_data = None
     error_message = None
     cities = None
+    loading = False  # Track loading state
 
     # Process the city entered by the user
     if request.method == 'POST':
         city = request.form['city']
+        loading = True  # Set loading to True while fetching data
         
         if city:
             try:
@@ -42,13 +44,15 @@ def home():
                 data = response.json()
 
                 if data['cod'] == 200:
+                    # Process weather data
                     weather_data = {
                         'city': data['name'],
                         'country': data['sys']['country'],
                         'temperature': data['main']['temp'],
                         'description': data['weather'][0]['description'],
                         'humidity': data['main']['humidity'],
-                        'wind_speed': data['wind']['speed']
+                        'wind_speed': data['wind']['speed'],
+                        'icon': data['weather'][0]['icon']  # Add weather icon
                     }
                 elif data['cod'] == 404:
                     # Handle city not found explicitly
@@ -57,11 +61,17 @@ def home():
                     # Handle other API errors
                     error_message = f"Error: {data.get('message', 'Unexpected issue with the API')}"
 
+                # Suggest multiple cities if there are similar city names
+                if 'list' in data:
+                    cities = data['list']  # Store list of similar cities
+
             except Exception as e:
                 error_message = f"An error occurred: {str(e)}"
 
+        loading = False  # Hide loading spinner after data fetch
+
     # Return the page with current data and reset form state when reloading
-    return render_template("index.html", weather_data=weather_data, error_message=error_message, cities=cities)
+    return render_template("index.html", weather_data=weather_data, error_message=error_message, cities=cities, loading=loading)
 
 @app.route('/get_weather/<city_name>', methods=['GET'])
 def get_weather(city_name):
@@ -79,7 +89,8 @@ def get_weather(city_name):
                 'temperature': data['main']['temp'],
                 'description': data['weather'][0]['description'],
                 'humidity': data['main']['humidity'],
-                'wind_speed': data['wind']['speed']
+                'wind_speed': data['wind']['speed'],
+                'icon': data['weather'][0]['icon']  # Include the icon in the response
             }
             return jsonify(weather_data)
         else:
