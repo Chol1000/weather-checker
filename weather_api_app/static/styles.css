@@ -1,9 +1,10 @@
+/* Base Styles */
 body {
     font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f0f8ff;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -18,11 +19,6 @@ body {
 
 h1 {
     color: #1e90ff;
-}
-
-p {
-    font-size: 14px;
-    color: #555;
 }
 
 form {
@@ -45,16 +41,10 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 button:hover {
     background-color: #4682b4;
-}
-
-.error {
-    color: red;
-    margin-top: 10px;
 }
 
 .weather {
@@ -65,184 +55,100 @@ button:hover {
     text-align: left;
 }
 
-.weather h2 {
-    color: #1e90ff;
+.error {
+    color: red;
+    margin-top: 10px;
 }
 
-.weather p {
-    font-size: 16px;
-    margin: 5px 0;
+.weather-emoji {
+    font-size: 24px;
+    vertical-align: middle;
 }
 
-.city-list {
-    margin-top: 20px;
-    text-align: left;
-}
+/* Media Queries */
 
-.city-list h3 {
-    color: #1e90ff;
-    margin-bottom: 10px;
-}
-
-.city-list ul {
-    list-style: none;
-    padding: 0;
-}
-
-.city-list li {
-    margin: 5px 0;
-}
-
-.city-list a {
-    color: #1e90ff;
-    text-decoration: none;
-}
-
-.city-list a:hover {
-    text-decoration: underline;
-}
-
-#loading {
-    text-align: center;
-    font-size: 20px;
-    margin-top: 20px;
-    font-weight: bold;
-    color: #007BFF;
-}
-
-#loading {
-    text-align: center;
-    font-size: 20px;
-    margin-top: 20px;
-    font-weight: bold;
-    color: #007BFF;
-}
-
-/* Global Responsive Styles */
-
-/* For Small Screens (Mobile Devices) */
-@media screen and (max-width: 600px) {
+/* For larger screens (769px and above) */
+@media (min-width: 769px) {
     .container {
-        padding: 10px;
-        width: 90%;
-    }
-
-    h1 {
-        font-size: 2rem; /* Slightly smaller heading font for mobile */
-    }
-
-    .weather h2 {
-        font-size: 1.5rem; /* Smaller city name font for mobile */
-    }
-
-    .weather p {
-        font-size: 1rem; /* Adjusted for readability on mobile */
-    }
-
-    .error {
-        font-size: 1rem; /* Error message font size */
-    }
-
-    #loading {
-        font-size: 1rem; /* Loading message font size */
-    }
-}
-
-/* For Medium Screens (Tablets, Smaller Desktops) */
-@media screen and (min-width: 601px) and (max-width: 1024px) {
-    .container {
-        padding: 15px;
-    }
-
-    h1 {
-        font-size: 2.2rem; /* Heading size adjusted */
-    }
-
-    .weather h2 {
-        font-size: 1.6rem; /* Slight increase but still controlled */
-    }
-
-    .weather p {
-        font-size: 1.1rem; /* Adjusted for readability */
-    }
-
-    #loading {
-        font-size: 1.2rem; /* Adjusted loading font size */
-    }
-}
-
-/* For Larger Screens (Desktops) */
-@media screen and (min-width: 1025px) {
-    .container {
-        width: 600px;
+        max-width: 600px;
+        margin: 50px auto;
         padding: 20px;
+        text-align: center;
     }
 
-    h1 {
-        font-size: 2.4rem; /* Heading size adjusted */
-    }
-
-    .weather h2 {
-        font-size: 1.8rem; /* Slightly larger city name for desktop */
-    }
-
-    .weather p {
-        font-size: 1.2rem; /* Readable size for weather details */
-    }
-
-    #loading {
-        font-size: 1.4rem; /* Adjusted loading font size */
-    }
-}
-
-/* For Extra Large Screens (Very Large Displays or Full-Screen Mode) */
-@media screen and (min-width: 1440px) {
-    .container {
-        width: 800px;
-    }
-
-    h1 {
-        font-size: 2.6rem; /* Adjusted font size for extra large screens */
-    }
-
-    .weather h2 {
-        font-size: 1.9rem; /* City name size increased a bit more */
-    }
-
-    .weather p {
-        font-size: 1.3rem; /* Slight increase for readability */
-    }
-
-    input[type="text"] {
-        font-size: 1.3rem;
-        padding: 12px;
+    input {
+        width: 80%;
+        font-size: 16px;
     }
 
     button {
-        font-size: 1.3rem;
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .weather {
+        font-size: 16px;
+    }
+
+    .weather-emoji {
+        font-size: 24px;
+    }
+}
+
+/* For tablets (width up to 768px) */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    input {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    button {
+        width: 100%;
         padding: 12px;
+        font-size: 16px;
     }
 
-    #loading {
-        font-size: 1.5rem;
+    h1 {
+        font-size: 24px;
     }
 }
 
-.spinner {
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid #3498db;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 2s linear infinite;
-    display: none;
-    margin: 0 auto;
+/* For smartphones (width up to 480px) */
+@media (max-width: 480px) {
+    .container {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .weather {
+        font-size: 14px;
+    }
+
+    .weather-emoji {
+        font-size: 20px;
+    }
 }
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }}
-
-
-
 
