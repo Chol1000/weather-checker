@@ -11,6 +11,7 @@ The **Weather Checker App** is a simple web application built using Flask, HTML,
 - [Deployment](#deployment)  
   - [Web Server Configuration](#web-server-configuration)  
   - [Load Balancer Configuration](#load-balancer-configuration)  
+  - [Testing](#testing)  
 - [Challenges and Solutions](#challenges-and-solutions)  
 - [Future Enhancements](#future-enhancements)  
 - [Demo](#demo)  
@@ -49,6 +50,7 @@ The **Weather Checker App** is a simple web application built using Flask, HTML,
 
 ---
 
+
 ## Setup Instructions  
 
 ### Prerequisites  
@@ -56,10 +58,37 @@ Ensure the following tools are installed on your machine:
 - **Python 3.8+**: Required to run the backend.  
 - **pip**: For managing Python packages.  
 - **Git**: To clone the repository.  
+## Deployment  
 
-### Local Setup  
+To deploy the Weather Checker App on production servers, we used a multi-server setup with Nginx as the load balancer and Gunicorn as the WSGI server to serve the Flask application. Below are the steps for deploying the app:
 
-1. **Clone the Repository**  
+### Web Server Configuration  
+
+1. **Prepare Web Servers**  
+   - You will need two web servers (Web01 and Web02). Set up the necessary environment on both web servers. Ensure that both servers have the following installed:  
+     - **Python 3.8+**
+     - **pip**  
+     - **Git**
+     - **Nginx**  
+     - **Gunicorn**
+
+2. **Clone the Repository on Both Servers**  
+   On both Web01 and Web02, clone the repository from GitHub:  
+   ```bash  
+   git clone https://github.com/Chol1000/weather-checker.git  
+   cd weather-checker  
+
+
+## Demo  
+
+You can watch a demo of the Weather Checker App in action by clicking the link below:
+
+[Weather Checker App Demo](https://youtu.be/wqjBTixYkTk)
+
+In this demo, you can see how the app allows users to check the weather of any city worldwide by entering the city name. The demo also showcases how the app fetches weather details like temperature, humidity, wind speed, and more.
+
+2. **Clone the Repository on Both Servers**  
+   On both Web01 and Web02, clone the repository from GitHub:  
    ```bash  
    git clone https://github.com/Chol1000/weather-checker.git  
    cd weather-checker  
