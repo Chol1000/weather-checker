@@ -49,6 +49,13 @@ The **Weather Checker App** is a simple web application built using Flask, HTML,
 - **OpenWeather API**: Supplies real-time weather data. Learn more [here](https://openweathermap.org/api).  
 
 ---
+## Demo  
+
+You can watch a demo of the Weather Checker App in action by clicking the link below:
+
+[Weather Checker App Demo](https://youtu.be/wqjBTixYkTk)
+
+In this demo, you can see how the app allows users to check the weather of any city worldwide by entering the city name. The demo also showcases how the app fetches weather details like temperature, humidity, wind speed, and more.
 
 
 ## Setup Instructions  
@@ -77,19 +84,3 @@ To deploy the Weather Checker App on production servers, we used a multi-server 
    ```bash  
    git clone https://github.com/Chol1000/weather-checker.git  
    cd weather-checker  
-
-
-## Demo  
-
-You can watch a demo of the Weather Checker App in action by clicking the link below:
-
-[Weather Checker App Demo](https://youtu.be/wqjBTixYkTk)
-
-In this demo, you can see how the app allows users to check the weather of any city worldwide by entering the city name. The demo also showcases how the app fetches weather details like temperature, humidity, wind speed, and more.
-
-2. **Clone the Repository on Both Servers**  
-   On both Web01 and Web02, clone the repository from GitHub:  
-   ```bash  
-   git clone https://github.com/Chol1000/weather-checker.git  
-   cd weather-checker  
-
