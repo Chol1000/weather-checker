@@ -86,5 +86,5 @@ def home():
     return render_template("index.html", weather_data=weather_data, error_message=error_message)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
 
