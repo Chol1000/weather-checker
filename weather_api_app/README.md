@@ -1,66 +1,66 @@
-# Weather Checker App
+# Weather Checker App  
 
-The Weather Checker App is a simple web application built using **Flask**, **HTML**, **CSS**, **JavaScript**, and **OpenWeather API**. It allows users to check the current weather of any city worldwide by entering the city name (optionally with the country). The app fetches weather data from the OpenWeather API and displays key weather details like temperature, humidity, wind speed, and a weather description with a corresponding icon.
+The **Weather Checker App** is a simple web application built using Flask, HTML, CSS, JavaScript, and the OpenWeather API. It allows users to check the current weather of any city worldwide by entering the city name (optionally with the country). The app fetches weather data from the OpenWeather API and displays key weather details such as temperature, humidity, wind speed, and a weather description with a corresponding icon.
 
-## Table of Contents
+---
 
-1. [Features](#features)
-2. [Tech Stack](#tech-stack)
-3. [Prerequisites](#prerequisites)
-4. [Setup Instructions](#setup-instructions)
-5. [Usage](#usage)
-6. [Contributing](#contributing)
-7. [License](#license)
-8. [Credits](#credits)
-9. [Troubleshooting](#troubleshooting)
-10. [Future Enhancements](#future-enhancements)
+## Table of Contents  
+- [Features](#features)  
+- [Tech Stack](#tech-stack)  
+- [Setup Instructions](#setup-instructions)  
+- [Deployment](#deployment)  
+  - [Web Server Configuration](#web-server-configuration)  
+  - [Load Balancer Configuration](#load-balancer-configuration)  
+- [Challenges and Solutions](#challenges-and-solutions)  
+- [Future Enhancements](#future-enhancements)  
+- [Demo](#demo)  
+- [Credits](#credits)  
 
-## Features
+---
 
-- **City Weather Lookup**: Users can input the name of a city (optionally with the country) to get current weather data.
-- **Weather Details**: Displays the temperature (in Celsius), weather description, humidity, wind speed, and an icon representing the weather.
-- **Error Handling**: If an invalid city name is entered, users will be presented with a helpful error message.
-- **Responsive Design**: The app is designed to be mobile-friendly and responsive, providing a seamless experience across devices.
-- **Loading Indicator**: A loading spinner is displayed while fetching weather data from the OpenWeather API, providing users with clear feedback.
-- **City Search Flexibility**: Users can enter just the city name, or city name along with the country for more accurate results.
+## Features  
 
-## Tech Stack
+- **City Weather Lookup**: Users can enter a city name (optionally with the country) to fetch and display weather details.  
+- **Weather Details**: Provides the following information:  
+  - Current temperature (in Celsius)  
+  - Weather description (e.g., Clear Sky, Rain)  
+  - Humidity (%)  
+  - Wind speed (m/s)  
+- **Interactive Feedback**: Loading animations appear while fetching data.  
+- **Error Handling**: Displays user-friendly error messages for invalid city names or network issues.  
+- **Responsive Design**: The app is optimized for mobile and desktop devices.  
 
-- **Frontend**:
-  - **HTML**: Basic structure and layout of the app.
-  - **CSS**: Styles for the app, with a focus on responsiveness and a clean design.
-  - **JavaScript**: Handles dynamic content updates, such as showing the loading state when fetching weather data.
+---
 
-- **Backend**:
-  - **Flask**: A Python web framework used for the server-side logic and routing.
-  - **Requests**: A Python library for making HTTP requests to the OpenWeather API.
-  - **dotenv**: A Python library for loading environment variables (like the OpenWeather API key) from a `.env` file.
+## Tech Stack  
 
-- **API**:
-  - **OpenWeather API**: Provides real-time weather data, including temperature, humidity, wind speed, weather description, and weather icons.
-##Demo
-Check out the demo of the app in action: #
-## Prerequisites
+### Frontend  
+- **HTML5**: Provides the structure of the application.  
+- **CSS3**: Styles the application with responsive and modern design.  
+- **JavaScript**: Enables dynamic updates and user interactivity.  
 
-Before running the project locally, make sure you have the following installed on your machine:
+### Backend  
+- **Flask**: Python framework for routing and backend logic.  
+- **Gunicorn**: WSGI server for serving the app in a production environment.  
+- **Nginx**: Reverse proxy and load balancer for efficient traffic management.  
 
-- **Python 3.x**: The backend of the app is built using Python, so ensure Python is installed. You can check by running `python --version` in the terminal.
-- **pip**: Python’s package installer for installing the app's dependencies.
-- **Git**: To clone the repository from GitHub.
+### API  
+- **OpenWeather API**: Supplies real-time weather data. Learn more [here](https://openweathermap.org/api).  
 
-### Installing Python & pip
+---
 
-- Install Python 3.x from [Python's official website](https://www.python.org/downloads/).
-- `pip` comes with Python 3.x, but if you need to install it manually, follow the instructions [here](https://pip.pypa.io/en/stable/installation/).
+## Setup Instructions  
 
-## Setup Instructions
+### Prerequisites  
+Ensure the following tools are installed on your machine:  
+- **Python 3.8+**: Required to run the backend.  
+- **pip**: For managing Python packages.  
+- **Git**: To clone the repository.  
 
-### 1. Clone the Repository
+### Local Setup  
 
-Clone the repository to your local machine using Git:
-
-```bash
-git clone https://github.com/Chol1000/weather-checker.git
-cd weather-checker
-
+1. **Clone the Repository**  
+   ```bash  
+   git clone https://github.com/Chol1000/weather-checker.git  
+   cd weather-checker  
 
