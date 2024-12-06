@@ -50,8 +50,8 @@ The app was deployed across multiple servers for high availability and load bala
     - The load balancer listens on port `8081` and forwards the requests to the backend servers using the upstream block:
       ```bash
       upstream backend {
-          server 34.229.85.41:5001;
-          server 54.90.251.205:5000;
+          server web-01.cholatem.tech:5001;
+          server web-02.cholatem.tech:5000;
       }
       ```
 
