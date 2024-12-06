@@ -69,7 +69,7 @@ The app was deployed across multiple servers for high availability and load bala
 2. **Set Up Gunicorn**: Use Gunicorn to launch the Flask application in the background on each server: gunicorn -w 4 app:app
   
 ## File Structure
-
+```plaintext
 weather-checker/
 │
 ├── app.py                 # Main Flask application file
